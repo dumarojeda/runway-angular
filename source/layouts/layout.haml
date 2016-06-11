@@ -1,5 +1,5 @@
 !!!
-%html{"ng-app" => ""}
+%html{"ng-app" => "runwayApp"}
   %head
     %meta{:charset => "utf-8"}/
     / Always force latest IE rendering engine or request Chrome Frame
@@ -20,6 +20,11 @@
     = yield
     = partial "layouts/footer"
 
-  = javascript_include_tag "script"
+  = javascript_include_tag "jquery.min"
+  = javascript_include_tag "angular.min"
+  = javascript_include_tag "angular-route.min"
+  = javascript_include_tag "slick.min"
+  = javascript_include_tag "angular-slick.min"
+  = javascript_include_tag "ng-app" 
   %script
     document.body.innerHTML = document.body.innerHTML.replace(/>\s+</g, '><');

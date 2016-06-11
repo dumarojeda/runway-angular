@@ -1,0 +1,32 @@
+
+.container
+  %h1.main-title My Wish list
+  .wrapper-whishlist
+    .item.row{"ng-repeat" => "item in items"}
+      .section-media.col-xs-3.col-md-2
+        .id-item
+        .image-item.disabled-sm
+          %img{"ng-src" => "{{item.image}}"}/
+        %a.icon-download{:href => ""}
+          %i.icon-down-bold
+      .section-info.col-xs-7.col-md-9
+        .info.col-sm-6
+          .title-item {{item.titleItem}}
+          .author-item {{item.artistName}}
+          %a.icon-info.disabled-sm{:href => ""}
+            %i.icon-information
+        .price.col-sm-2
+          .price-item {{item.price | currency}}
+          %a.disabled-sm{:href => ""} See Review
+        .link.disabled-sm.col-sm-2
+          %a{:href => ""} View Contract
+        .wrapper-button.col-sm-2
+          %a.button{:href => ""} Buy
+      .section-options.col-xs-2.col-md-1
+        .icon-close
+          %i.icon-close-round{"ng-click" => "remove(item)"}
+
+  .total-items.col-sm-offset-9
+    Total price: {{items|sumData: 'price' | currency}}
+    .wrapper-button.center
+      %a.button.block.pink{:href => "#/buy_complete"} Buy All Books

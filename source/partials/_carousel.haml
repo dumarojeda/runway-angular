@@ -1,19 +1,9 @@
 / Carousel
-%section#wrapper-carousel
+%section#wrapper-carousel{"ng-controller" => "dataCarousel"}
   .container
-    .carousel
-      .item
-        %img{:src => "images/Carousel-01.jpg", :alt => "Carousel 01"}/
+    %slick{"autoplay" => "true", "autoplaySpeed" => "5000", "dots" => "true"}
+      .item{"ng-repeat" => "slide in slides"}
+        %img{"ng-src" => "{{slide.source}}"}/
         .caption
-          %h3 Lorem ipsum dolor
-          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ex.
-      .item
-        %img{:src => "images/Carousel-02.jpg", :alt => "Carousel 02"}/
-        .caption
-          %h3 Lorem ipsum dolor
-          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ex.
-      .item
-        %img{:src => "images/Carousel-03.jpg", :alt => "Carousel 03"}/
-        .caption
-          %h3 Lorem ipsum dolor
-          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ex.
+          %h3 {{slide.title}}
+          %p {{slide.caption}}

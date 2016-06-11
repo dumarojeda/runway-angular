@@ -89,4 +89,5 @@ helpers do
 end
 
 # Or for an individual file:
-#page '/login.html', :layout => false
+page 'views/home.html', :layout => false
+page 'views/buy_complete.html', :layout => false

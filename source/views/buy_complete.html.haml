@@ -1,0 +1,25 @@
+.container
+  .breadcrumbs
+    %a{:href => "#/"} 
+      %i.icon-arrow-left
+      Home
+  %h1.main-title Books you've just purchased
+  .wrapper-whishlist
+    .item.row{"ng-repeat" => "item in items"}
+      .section-media.col-xs-3.col-md-2
+        .id-item
+        .image-item.disabled-sm
+          %img{"ng-src" => "{{item.image}}"}/
+        %a.icon-download{:href => ""}
+          %i.icon-down-bold
+      .section-info.col-xs-7.col-md-9
+        .info.col-sm-6
+          .title-item {{item.titleItem}}
+          .author-item {{item.artistName}}
+          %a.icon-info.disabled-sm{:href => ""}
+            %i.icon-information
+        .price.col-sm-2
+          .price-item {{item.price | currency}}
+
+  .total-items.col-sm-offset-9
+    Total price: {{items|sumData: 'price' | currency}}
