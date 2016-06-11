@@ -1,0 +1,80 @@
+// ======================================================================================
+// Header
+// ======================================================================================
+.slick-slider
+  .slick-arrow
+    cursor: pointer
+    position: absolute
+    top: 40%
+    color: $white
+    font-size: 1.5em
+    z-index: 5
+    border: 0
+  .slick-prev
+    left: 0.2em
+  .slick-next
+    right: 0.2em
+  +bp768
+    .slick-arrow
+      font-size: 3em
+
+.slick-dots
+  margin: 0
+  padding: 0
+  position: absolute
+  bottom: 0
+  width: 100%
+  text-align: center
+  li
+    display: inline-block
+    margin: 0 2px
+    button
+      text-indent: -9999px
+      border: 1px solid $white
+      background: transparent
+      border-radius: 50%
+      padding: 0
+      height: 10px
+      width: 10px
+    &.slick-active
+      button
+        background: $white
+  +bp768
+    bottom: 1em
+    li
+      width: 15px
+      height: 15px
+      button
+        border: 2px solid $white
+
+#wrapper-carousel
+  background: $black
+  .container
+    padding: 0
+.carousel
+  .item
+    position: relative
+    .caption
+      background: rgba($black, 0.5)
+      padding: 1em 2em
+      position: absolute
+      color: $white
+      bottom: 0
+      h3
+        text-transform: uppercase
+        font-size: 1.2em
+        border-bottom: 1px dashed $white
+        margin: 0 0 0.3em 0
+        padding: 0 0 0.3em 0
+      p
+        +font-normal
+        font-size: 0.9em
+  +bp768
+    .item
+      .caption
+        background: transparent
+        padding: 0
+        left: 3em
+        bottom: 4em 
+        h3
+          font-size: 2.5em

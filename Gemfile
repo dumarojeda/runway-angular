@@ -20,4 +20,4 @@ gem 'compass'
 gem 'boostrap-sass', '~> 0.0.2'
 
 # https://github.com/cristianferrarig/font-awesome-middleman
-gem 'font-awesome-middleman'
+#gem 'font-awesome-middleman'
