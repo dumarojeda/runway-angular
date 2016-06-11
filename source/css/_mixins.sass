@@ -1,0 +1,79 @@
+// ======================================================================================
+// Mixins
+// ======================================================================================
+
+// Breakpoints helpers
+
+// 480px or 30em
+=bp480
+  @media screen and (min-width: 480px)
+    @content
+
+// 640px or 40em
+=bp640
+  @media screen and (min-width: 640px)
+    @content
+
+// 320px or 20em and 959px or 59.938em
+=bp320-bp960
+  @media screen and (min-width: 320px) and (max-width: 959px)
+    @content
+
+// 640px or 40em and 959px or 59.938em
+=bp640-bp960
+  @media screen and (min-width: 640px) and (max-width: 959px)
+    @content
+
+// 320px or 20em and 768px or 48em
+=bp320-bp768
+  @media screen and (min-width: 320px) and (max-width: 767px)
+    @content
+
+// 768px or 48em
+=bp768
+  @media screen and (min-width: 768px)
+    @content
+
+// 960px or 60em
+=bp960
+  @media screen and (min-width: 960px)
+    @content
+
+// 1024px or 64em
+=bp1024
+  @media screen and (min-width: 1024px)
+    @content
+
+// 1200px or 75em
+=bp1200
+  @media screen and (min-width: 1200px)
+    @content
+
+// 1280px or 80em
+=bp1280
+  @media screen and (min-width: 1280px)
+    @content
+
+// 1440px or 90em
+=bp1440
+  @media screen and (min-width: 1440px)
+    @content
+
+// Em to px helper
+@function em($px, $base: $base-font-size)
+  @return ($px / $base) * 1em
+
+// Prefixes
+$default-prefixes: webkit moz ms o
+=prefix($property, $value, $prefixes: $default-prefixes)
+  @each $prefix in $prefixes
+    -#{$prefix}-#{$property}: #{$value}
+  #{$property}: #{$value}
+
+// Line Clamp
+=line-clamp($lines)
+  overflow: hidden
+  text-overflow: ellipsis
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: $lines
